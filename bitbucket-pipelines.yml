@@ -9,5 +9,17 @@ pipelines:
   default:
     - step:
         script:
-          - mvn -B test    # -B batch mode makes Maven less verbose
+          - mvn -B verify    # -B batch mode makes Maven less verbose
+        services:
+          - mysql
+ 
+definitions:
+  services:
+    mysql:
+      image: mysql
+       environment:
+          MYSQL_DATABASE: restaurante
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_USER: root
+          MYSQL_PASSWORD:
           
