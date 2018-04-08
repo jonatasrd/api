@@ -1,11 +1,20 @@
 package com.restaurante.modelo;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
 public class Endereco {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 
 	@Column(name = "cep")
-	private int cep;
+	private Long cep;
 
 	@Column(name = "municipio")
 	private String municipio;
@@ -20,13 +29,13 @@ public class Endereco {
 	private String logradouro;
 
 	@Column(name = "numero")
-	private int numero;
-
-	public int getCep() {
+	private Long numero;
+	
+	public Long getCep() {
 		return cep;
 	}
 
-	public void setCep(int cep) {
+	public void setCep(Long cep) {
 		this.cep = cep;
 	}
 
@@ -62,11 +71,11 @@ public class Endereco {
 		this.logradouro = logradouro;
 	}
 
-	public int getNumero() {
+	public Long getNumero() {
 		return numero;
 	}
 
-	public void setNumero(int numero) {
+	public void setNumero(Long numero) {
 		this.numero = numero;
 	}
 
@@ -75,11 +84,14 @@ public class Endereco {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((bairro == null) ? 0 : bairro.hashCode());
-		result = prime * result + cep;
+		result = prime * result + ((cep == null) ? 0 : cep.hashCode());
 		result = prime * result + ((estado == null) ? 0 : estado.hashCode());
-		result = prime * result + ((logradouro == null) ? 0 : logradouro.hashCode());
-		result = prime * result + ((municipio == null) ? 0 : municipio.hashCode());
-		result = prime * result + numero;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result
+				+ ((logradouro == null) ? 0 : logradouro.hashCode());
+		result = prime * result
+				+ ((municipio == null) ? 0 : municipio.hashCode());
+		result = prime * result + ((numero == null) ? 0 : numero.hashCode());
 		return result;
 	}
 
@@ -97,12 +109,20 @@ public class Endereco {
 				return false;
 		} else if (!bairro.equals(other.bairro))
 			return false;
-		if (cep != other.cep)
+		if (cep == null) {
+			if (other.cep != null)
+				return false;
+		} else if (!cep.equals(other.cep))
 			return false;
 		if (estado == null) {
 			if (other.estado != null)
 				return false;
 		} else if (!estado.equals(other.estado))
+			return false;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
 			return false;
 		if (logradouro == null) {
 			if (other.logradouro != null)
@@ -114,7 +134,10 @@ public class Endereco {
 				return false;
 		} else if (!municipio.equals(other.municipio))
 			return false;
-		if (numero != other.numero)
+		if (numero == null) {
+			if (other.numero != null)
+				return false;
+		} else if (!numero.equals(other.numero))
 			return false;
 		return true;
 	}

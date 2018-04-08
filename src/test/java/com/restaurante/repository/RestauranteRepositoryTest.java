@@ -13,6 +13,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.restaurante.modelo.Endereco;
 import com.restaurante.modelo.Prato;
 import com.restaurante.modelo.Restaurante;
 
@@ -30,8 +31,8 @@ public class RestauranteRepositoryTest {
     private PratoRepository pratoRepository;
     
 	private Restaurante restaurante;
+	private Endereco endereco = new Endereco();
 	private List<Restaurante> restaurantes;
-	
 	private List<Prato> pratos = new ArrayList<>();
 
 	private Prato prato1;
@@ -54,13 +55,14 @@ public class RestauranteRepositoryTest {
     	restaurante.setNome("Old House");
     	restaurante.setTelefone("456788888");
     	
-    	restaurante.setCep(12978000L);
-    	restaurante.setEstado("Sao Paulo");
-    	restaurante.setMunicipio("Sao Paulo");
-    	restaurante.setBairro("Bela Vista");
-    	restaurante.setLogradouro("Alameda Santos");
-    	restaurante.setNumero(890L);
+    	endereco.setCep(12978000L);
+    	endereco.setEstado("Sao Paulo");
+    	endereco.setMunicipio("Sao Paulo");
+    	endereco.setBairro("Bela Vista");
+    	endereco.setLogradouro("Alameda Santos");
+    	endereco.setNumero(890L);
     	
+    	restaurante.setEndereco(endereco);
     	restaurante.addPrato(prato1);
     	restaurante.addPrato(prato2);
     
@@ -69,7 +71,6 @@ public class RestauranteRepositoryTest {
     	entityManager.persist(restaurante);
     	entityManager.flush();
     	
-    	//restaurantes = restauranteRepository.findByNomeContainingIgnoreCase(restaurante.getNome());
     }
     
     @Test
@@ -79,12 +80,12 @@ public class RestauranteRepositoryTest {
     	assertThat(restaurantes.get(0).getNome()).isEqualTo(restaurante.getNome());
     	assertThat(restaurantes.get(0).getTelefone()).isEqualTo(restaurante.getTelefone());
     	
-    	assertThat(restaurantes.get(0).getCep()).isEqualTo(restaurante.getCep());
-    	assertThat(restaurantes.get(0).getEstado()).isEqualTo(restaurante.getEstado());
-    	assertThat(restaurantes.get(0).getMunicipio()).isEqualTo(restaurante.getMunicipio());
-    	assertThat(restaurantes.get(0).getBairro()).isEqualTo(restaurante.getBairro());
-    	assertThat(restaurantes.get(0).getLogradouro()).isEqualTo(restaurante.getLogradouro());
-    	assertThat(restaurantes.get(0).getNumero()).isEqualTo(restaurante.getNumero());
+    	assertThat(restaurantes.get(0).getEndereco().getCep()).isEqualTo(restaurante.getEndereco().getCep());
+    	assertThat(restaurantes.get(0).getEndereco().getEstado()).isEqualTo(restaurante.getEndereco().getEstado());
+    	assertThat(restaurantes.get(0).getEndereco().getMunicipio()).isEqualTo(restaurante.getEndereco().getMunicipio());
+    	assertThat(restaurantes.get(0).getEndereco().getBairro()).isEqualTo(restaurante.getEndereco().getBairro());
+    	assertThat(restaurantes.get(0).getEndereco().getLogradouro()).isEqualTo(restaurante.getEndereco().getLogradouro());
+    	assertThat(restaurantes.get(0).getEndereco().getNumero()).isEqualTo(restaurante.getEndereco().getNumero());
     	
     	assertThat(restaurantes.get(0).getPratos().get(0).getNome()).isEqualTo(prato1.getNome());
     	

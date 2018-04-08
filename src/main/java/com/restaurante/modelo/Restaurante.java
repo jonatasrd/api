@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Restaurante {
@@ -25,23 +26,8 @@ public class Restaurante {
 	@Column(name = "telefone")
 	private String telefone;
 
-	@Column(name = "cep")
-	private Long cep;
-
-	@Column(name = "municipio")
-	private String municipio;
-
-	@Column(name = "estado")
-	private String estado;
-
-	@Column(name = "bairro")
-	private String bairro;
-
-	@Column(name = "logradouro")
-	private String logradouro;
-
-	@Column(name = "numero")
-	private Long numero;
+	@OneToOne(cascade=CascadeType.ALL)
+	private Endereco endereco;
 
 	@OneToMany(mappedBy = "restaurante", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
 	private List<Prato> pratos = new ArrayList<>();
@@ -88,52 +74,12 @@ public class Restaurante {
 		this.telefone = telefone;
 	}
 
-	public Long getCep() {
-		return cep;
+	public Endereco getEndereco() {
+		return endereco;
 	}
 
-	public void setCep(Long cep) {
-		this.cep = cep;
-	}
-
-	public String getMunicipio() {
-		return municipio;
-	}
-
-	public void setMunicipio(String municipio) {
-		this.municipio = municipio;
-	}
-
-	public String getEstado() {
-		return estado;
-	}
-
-	public void setEstado(String estado) {
-		this.estado = estado;
-	}
-
-	public String getBairro() {
-		return bairro;
-	}
-
-	public void setBairro(String bairro) {
-		this.bairro = bairro;
-	}
-
-	public String getLogradouro() {
-		return logradouro;
-	}
-
-	public void setLogradouro(String logradouro) {
-		this.logradouro = logradouro;
-	}
-
-	public Long getNumero() {
-		return numero;
-	}
-
-	public void setNumero(Long numero) {
-		this.numero = numero;
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
 	}
 
 	@Override

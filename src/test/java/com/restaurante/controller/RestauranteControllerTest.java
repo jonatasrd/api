@@ -23,6 +23,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
+import com.restaurante.modelo.Endereco;
 import com.restaurante.modelo.Restaurante;
 import com.restaurante.service.RestauranteService;
 
@@ -38,6 +39,7 @@ public class RestauranteControllerTest {
 	private RestauranteService service;
 
 	private Restaurante restaurante;
+	private Endereco endereco = new Endereco();
 
 	private List<Restaurante> restaurantes;
 
@@ -48,12 +50,14 @@ public class RestauranteControllerTest {
 		restaurante.setNome("Old House");
 		restaurante.setTelefone("456788888");
 
-		restaurante.setCep(12978000L);
-		restaurante.setEstado("Sao Paulo");
-		restaurante.setMunicipio("Sao Paulo");
-		restaurante.setBairro("Bela Vista");
-		restaurante.setLogradouro("Alameda Santos");
-		restaurante.setNumero(890L);
+		endereco.setCep(12960000L);
+		endereco.setEstado("Sao Paulo");
+		endereco.setMunicipio("Sao Paulo");
+		endereco.setBairro("Bela Vista");
+		endereco.setLogradouro("Alameda Santos");
+		endereco.setNumero(890L);
+		
+		restaurante.setEndereco(endereco);
 		
 		restaurantes = Arrays.asList(restaurante);
 	}
