@@ -18,6 +18,8 @@ definitions:
     mysql:
       image: mysql
           environment:
-            MYSQL_DATABASE: pipelines
-            MYSQL_ROOT_PASSWORD: let_me_in
+            MYSQL_DATABASE: 'pipelines'
+            MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
+            MYSQL_USER: 'drupal'
+            MYSQL_PASSWORD: 'drupal'
               
