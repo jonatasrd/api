@@ -17,9 +17,7 @@ definitions:
   services:
     mysql:
       image: mysql
-       environment:
-          MYSQL_DATABASE: restaurante
-          MYSQL_ROOT_PASSWORD: root
-          MYSQL_USER: root
-          MYSQL_PASSWORD:
-          
+          environment:
+            MYSQL_DATABASE: pipelines
+            MYSQL_ROOT_PASSWORD: let_me_in
+              
