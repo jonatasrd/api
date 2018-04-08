@@ -10,16 +10,3 @@ pipelines:
     - step:
         script:
           - mvn -B verify    # -B batch mode makes Maven less verbose
-        services:
-          - mysql
- 
-definitions:
-  services:
-    mysql:
-      image: mysql
-          environment:
-            MYSQL_DATABASE: 'pipelines'
-            MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
-            MYSQL_USER: 'drupal'
-            MYSQL_PASSWORD: 'drupal'
-              
