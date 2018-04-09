@@ -1,0 +1,793 @@
+{
+	"id": "e6ca750c-e348-461d-95ff-0f55e5c4a3c1",
+	"name": "Restaurante EndPoints",
+	"description": "",
+	"auth": null,
+	"events": null,
+	"variables": null,
+	"order": [],
+	"folders_order": [
+		"9f2c8145-14a5-4bf6-94b1-490ebbd34f6e",
+		"fd7200ec-3bef-4b8f-bd40-6cc7c0fe7716"
+	],
+	"folders": [
+		{
+			"id": "9f2c8145-14a5-4bf6-94b1-490ebbd34f6e",
+			"name": "Pratos",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"collection": "e6ca750c-e348-461d-95ff-0f55e5c4a3c1",
+			"folder": null,
+			"order": [
+				"0a3591dc-68bc-46d3-8f21-7c55a0ae6260",
+				"0b8de41b-b6cf-497a-9458-1ac088eab362",
+				"2d936096-8823-42b9-bf78-33461333f2c7",
+				"49e47ca6-d2f6-48d3-94ff-649e25953767",
+				"9e35f798-8e6b-42c8-b04d-9f97851b90e2",
+				"c22aa794-cb1b-4378-90b3-a5576f2caf0e",
+				"d106b322-bebc-44e4-ae3b-7c8ae4b9a3e1"
+			],
+			"folders_order": []
+		},
+		{
+			"id": "fd7200ec-3bef-4b8f-bd40-6cc7c0fe7716",
+			"name": "Restaurante",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"collection": "e6ca750c-e348-461d-95ff-0f55e5c4a3c1",
+			"folder": null,
+			"order": [
+				"0a16fbc4-5737-4baa-b975-0cd650e68e7f",
+				"0ef92b3a-8b89-4479-bbca-686d65072b78",
+				"16f75719-3380-4e61-9aca-de83213e73af",
+				"2b5bd7d0-6799-48f1-826b-f7f416153348",
+				"c3f30474-f427-4059-a12e-8bb03a1a375d",
+				"f3342393-e8c7-43a2-a0a5-b326fb19c6e8"
+			],
+			"folders_order": []
+		}
+	],
+	"requests": [
+		{
+			"id": "0a16fbc4-5737-4baa-b975-0cd650e68e7f",
+			"name": "Delete",
+			"url": "http://localhost:8080/api/admin/restaurante/1",
+			"description": null,
+			"data": [],
+			"dataMode": "params",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic YWRtaW46YWRtaW4="
+				}
+			],
+			"method": "DELETE",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "username",
+						"value": "user",
+						"type": "string"
+					},
+					{
+						"key": "password",
+						"value": "user",
+						"type": "string"
+					},
+					{
+						"key": "saveHelperData",
+						"value": true,
+						"type": "boolean"
+					},
+					{
+						"key": "showPassword",
+						"value": false,
+						"type": "boolean"
+					}
+				]
+			},
+			"events": null,
+			"folder": "fd7200ec-3bef-4b8f-bd40-6cc7c0fe7716",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "0a3591dc-68bc-46d3-8f21-7c55a0ae6260",
+			"name": "Save",
+			"url": "http://localhost:8080/api/restaurante/prato",
+			"description": null,
+			"data": [
+				{
+					"key": "nome",
+					"value": "Salada Alface",
+					"type": "text"
+				},
+				{
+					"key": "valor",
+					"value": "15",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic dXNlcjp1c2Vy"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "username",
+						"value": "user",
+						"type": "string"
+					},
+					{
+						"key": "password",
+						"value": "user",
+						"type": "string"
+					},
+					{
+						"key": "saveHelperData",
+						"value": true,
+						"type": "boolean"
+					},
+					{
+						"key": "showPassword",
+						"value": false,
+						"type": "boolean"
+					}
+				]
+			},
+			"events": null,
+			"folder": "9f2c8145-14a5-4bf6-94b1-490ebbd34f6e",
+			"headers": "Authorization: Basic dXNlcjp1c2Vy\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "0b8de41b-b6cf-497a-9458-1ac088eab362",
+			"name": "Get (id)",
+			"url": "http://localhost:8080/api/restaurante/prato/1",
+			"description": null,
+			"data": [],
+			"dataMode": "params",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic dXNlcjp1c2Vy"
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "username",
+						"value": "user",
+						"type": "string"
+					},
+					{
+						"key": "password",
+						"value": "user",
+						"type": "string"
+					},
+					{
+						"key": "saveHelperData",
+						"value": true,
+						"type": "boolean"
+					},
+					{
+						"key": "showPassword",
+						"value": false,
+						"type": "boolean"
+					}
+				]
+			},
+			"events": null,
+			"folder": "9f2c8145-14a5-4bf6-94b1-490ebbd34f6e",
+			"headers": "Authorization: Basic dXNlcjp1c2Vy\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "0ef92b3a-8b89-4479-bbca-686d65072b78",
+			"name": "Get por Nome",
+			"url": "http://localhost:8080/api/restaurante?nome=alm",
+			"description": null,
+			"data": [],
+			"dataMode": "params",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic dXNlcjp1c2Vy"
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "nome",
+					"value": "alm",
+					"equals": true
+				}
+			],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "username",
+						"value": "user",
+						"type": "string"
+					},
+					{
+						"key": "password",
+						"value": "user",
+						"type": "string"
+					},
+					{
+						"key": "saveHelperData",
+						"value": true,
+						"type": "boolean"
+					},
+					{
+						"key": "showPassword",
+						"value": false,
+						"type": "boolean"
+					}
+				]
+			},
+			"events": null,
+			"folder": "fd7200ec-3bef-4b8f-bd40-6cc7c0fe7716",
+			"headers": "Authorization: Basic dXNlcjp1c2Vy\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "16f75719-3380-4e61-9aca-de83213e73af",
+			"name": "Get (id)",
+			"url": "http://localhost:8080/api/restaurante/1",
+			"description": null,
+			"data": [],
+			"dataMode": "params",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic YWRtaW46YWRtaW4="
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "username",
+						"value": "user",
+						"type": "string"
+					},
+					{
+						"key": "password",
+						"value": "user",
+						"type": "string"
+					},
+					{
+						"key": "saveHelperData",
+						"value": true,
+						"type": "boolean"
+					},
+					{
+						"key": "showPassword",
+						"value": false,
+						"type": "boolean"
+					}
+				]
+			},
+			"events": null,
+			"folder": "fd7200ec-3bef-4b8f-bd40-6cc7c0fe7716",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "2b5bd7d0-6799-48f1-826b-f7f416153348",
+			"name": "Update",
+			"url": "http://localhost:8080/api/admin/restaurante",
+			"description": null,
+			"data": [
+				{
+					"key": "id",
+					"value": "1",
+					"type": "text"
+				},
+				{
+					"key": "nome",
+					"value": "Almanara",
+					"type": "text"
+				},
+				{
+					"key": "telefone",
+					"value": "787878",
+					"type": "text"
+				},
+				{
+					"key": "endereco.cep",
+					"value": "01311923",
+					"type": "text"
+				},
+				{
+					"key": "endereco.municipio",
+					"value": "CAMPINAS",
+					"type": "text"
+				},
+				{
+					"key": "endereco.estado",
+					"value": "SAO PAULO",
+					"type": "text"
+				},
+				{
+					"key": "endereco.bairro",
+					"value": "CENTRO",
+					"type": "text"
+				},
+				{
+					"key": "endereco.logradouro",
+					"value": "RUA MARTINES",
+					"type": "text"
+				},
+				{
+					"key": "endereco.numero",
+					"value": "333",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic YWRtaW46YWRtaW4="
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "username",
+						"value": "user",
+						"type": "string"
+					},
+					{
+						"key": "password",
+						"value": "user",
+						"type": "string"
+					},
+					{
+						"key": "saveHelperData",
+						"value": true,
+						"type": "boolean"
+					},
+					{
+						"key": "showPassword",
+						"value": false,
+						"type": "boolean"
+					}
+				]
+			},
+			"events": null,
+			"folder": "fd7200ec-3bef-4b8f-bd40-6cc7c0fe7716",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "2d936096-8823-42b9-bf78-33461333f2c7",
+			"name": "Get prato",
+			"url": "http://localhost:8080/api/restaurante/prato/all",
+			"description": null,
+			"data": [],
+			"dataMode": "params",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic YWRtaW46YWRtaW4="
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "username",
+						"value": "user",
+						"type": "string"
+					},
+					{
+						"key": "password",
+						"value": "user",
+						"type": "string"
+					},
+					{
+						"key": "saveHelperData",
+						"value": true,
+						"type": "boolean"
+					},
+					{
+						"key": "showPassword",
+						"value": false,
+						"type": "boolean"
+					}
+				]
+			},
+			"events": null,
+			"folder": "9f2c8145-14a5-4bf6-94b1-490ebbd34f6e",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "49e47ca6-d2f6-48d3-94ff-649e25953767",
+			"name": "Update",
+			"url": "http://localhost:8080/api/restaurante/prato",
+			"description": null,
+			"data": [
+				{
+					"key": "nome ",
+					"value": "Macarronada",
+					"type": "text"
+				},
+				{
+					"key": "valor ",
+					"value": "45",
+					"type": "text"
+				},
+				{
+					"key": "id",
+					"value": "1",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic dXNlcjp1c2Vy"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "username",
+						"value": "user",
+						"type": "string"
+					},
+					{
+						"key": "password",
+						"value": "user",
+						"type": "string"
+					},
+					{
+						"key": "saveHelperData",
+						"value": true,
+						"type": "boolean"
+					},
+					{
+						"key": "showPassword",
+						"value": false,
+						"type": "boolean"
+					}
+				]
+			},
+			"events": null,
+			"folder": "9f2c8145-14a5-4bf6-94b1-490ebbd34f6e",
+			"headers": "Authorization: Basic dXNlcjp1c2Vy\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "9e35f798-8e6b-42c8-b04d-9f97851b90e2",
+			"name": "Save/Update com associacao",
+			"url": "http://localhost:8080/api/restaurante/4/prato",
+			"description": null,
+			"data": [
+				{
+					"key": "nome",
+					"value": "Feijao",
+					"type": "text"
+				},
+				{
+					"key": "valor",
+					"value": "15",
+					"type": "text"
+				},
+				{
+					"key": "id",
+					"value": "1",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic dXNlcjp1c2Vy"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "username",
+						"value": "user",
+						"type": "string"
+					},
+					{
+						"key": "password",
+						"value": "user",
+						"type": "string"
+					},
+					{
+						"key": "saveHelperData",
+						"value": true,
+						"type": "boolean"
+					},
+					{
+						"key": "showPassword",
+						"value": false,
+						"type": "boolean"
+					}
+				]
+			},
+			"events": null,
+			"folder": "9f2c8145-14a5-4bf6-94b1-490ebbd34f6e",
+			"headers": "Authorization: Basic dXNlcjp1c2Vy\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "c22aa794-cb1b-4378-90b3-a5576f2caf0e",
+			"name": "Delete",
+			"url": "http://localhost:8080/api/restaurante/prato/1",
+			"description": null,
+			"data": [],
+			"dataMode": "params",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic dXNlcjp1c2Vy"
+				}
+			],
+			"method": "DELETE",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "username",
+						"value": "user",
+						"type": "string"
+					},
+					{
+						"key": "password",
+						"value": "user",
+						"type": "string"
+					},
+					{
+						"key": "saveHelperData",
+						"value": true,
+						"type": "boolean"
+					},
+					{
+						"key": "showPassword",
+						"value": false,
+						"type": "boolean"
+					}
+				]
+			},
+			"events": null,
+			"folder": "9f2c8145-14a5-4bf6-94b1-490ebbd34f6e",
+			"headers": "Authorization: Basic dXNlcjp1c2Vy\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "c3f30474-f427-4059-a12e-8bb03a1a375d",
+			"name": "Save",
+			"url": "http://localhost:8080/api/admin/restaurante",
+			"description": null,
+			"data": [
+				{
+					"key": "nome",
+					"value": "ALMANARA",
+					"type": "text"
+				},
+				{
+					"key": "telefone",
+					"value": "1145678989",
+					"type": "text"
+				},
+				{
+					"key": "endereco.cep",
+					"value": "12967000",
+					"type": "text"
+				},
+				{
+					"key": "endereco.municipio",
+					"value": "SAO PAULO",
+					"type": "text"
+				},
+				{
+					"key": "endereco.estado",
+					"value": "SAO PAULO",
+					"type": "text"
+				},
+				{
+					"key": "endereco.bairro",
+					"value": "VILA MARIANA",
+					"type": "text"
+				},
+				{
+					"key": "endereco.logradouro",
+					"value": "RUA ANDRADAS",
+					"type": "text"
+				},
+				{
+					"key": "endereco.numero",
+					"value": "171",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic YWRtaW46YWRtaW4="
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "username",
+						"value": "admin",
+						"type": "string"
+					},
+					{
+						"key": "password",
+						"value": "admin",
+						"type": "string"
+					},
+					{
+						"key": "saveHelperData",
+						"value": true,
+						"type": "boolean"
+					},
+					{
+						"key": "showPassword",
+						"value": false,
+						"type": "boolean"
+					}
+				]
+			},
+			"events": null,
+			"folder": "fd7200ec-3bef-4b8f-bd40-6cc7c0fe7716",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "d106b322-bebc-44e4-ae3b-7c8ae4b9a3e1",
+			"name": "Get por Nome",
+			"url": "http://localhost:8080/api/restaurante/prato?nome=Alfa",
+			"description": null,
+			"data": [],
+			"dataMode": "params",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic dXNlcjp1c2Vy"
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "nome",
+					"value": "Alfa"
+				}
+			],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "username",
+						"value": "user",
+						"type": "string"
+					},
+					{
+						"key": "password",
+						"value": "user",
+						"type": "string"
+					},
+					{
+						"key": "saveHelperData",
+						"value": true,
+						"type": "boolean"
+					},
+					{
+						"key": "showPassword",
+						"value": false,
+						"type": "boolean"
+					}
+				]
+			},
+			"events": null,
+			"folder": "9f2c8145-14a5-4bf6-94b1-490ebbd34f6e",
+			"headers": "Authorization: Basic dXNlcjp1c2Vy\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "f3342393-e8c7-43a2-a0a5-b326fb19c6e8",
+			"name": "Get",
+			"url": "http://localhost:8080/api/restaurante/all",
+			"description": null,
+			"data": [],
+			"dataMode": "params",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic dXNlcjp1c2Vy"
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "username",
+						"value": "user",
+						"type": "string"
+					},
+					{
+						"key": "password",
+						"value": "user",
+						"type": "string"
+					},
+					{
+						"key": "saveHelperData",
+						"value": true,
+						"type": "boolean"
+					},
+					{
+						"key": "showPassword",
+						"value": false,
+						"type": "boolean"
+					}
+				]
+			},
+			"events": null,
+			"folder": "fd7200ec-3bef-4b8f-bd40-6cc7c0fe7716",
+			"headers": "Authorization: Basic dXNlcjp1c2Vy\n",
+			"pathVariables": {}
+		}
+	]
+}
