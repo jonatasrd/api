@@ -5,7 +5,6 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @EnableWebSecurity
@@ -31,9 +30,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 					.httpBasic()
 				.and()
 					.logout()
-				.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-					.and()
-						.sessionManagement()
-							.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+				.logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
 	}
 }
