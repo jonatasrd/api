@@ -17,7 +17,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -107,7 +106,7 @@ public class PratoControllerTest {
 
 		mvc.perform(post("/restaurante/prato")
 				.with(httpBasic("user","user")))
-				.andExpect(status().isOk());	
+				.andExpect(status().isCreated());	
 	}
 	
 	@Test
@@ -117,7 +116,7 @@ public class PratoControllerTest {
 
 		mvc.perform(post("/restaurante/prato")
 				.with(httpBasic("admin","admin")))
-				.andExpect(status().isOk());	
+				.andExpect(status().isCreated());	
 	}
 	
 	@Test
@@ -125,7 +124,7 @@ public class PratoControllerTest {
 
 		mvc.perform(delete("/restaurante/prato/1")
 				.with(httpBasic("admin","admin")))
-				.andExpect(status().isOk());	
+				.andExpect(status().isNoContent());	
 	}
 	
 	@Test
@@ -133,6 +132,6 @@ public class PratoControllerTest {
 
 		mvc.perform(delete("/restaurante/prato/1")
 				.with(httpBasic("user","user")))
-				.andExpect(status().isOk());	
+				.andExpect(status().isNoContent());	
 	}
 }

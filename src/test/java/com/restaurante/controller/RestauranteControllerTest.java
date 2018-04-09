@@ -119,7 +119,7 @@ public class RestauranteControllerTest {
 
 		mvc.perform(post("/admin/restaurante")
 				.with(httpBasic("admin","admin")))
-				.andExpect(status().isOk());	
+				.andExpect(status().isCreated());	
 	}
 	
 	@Test
@@ -137,7 +137,7 @@ public class RestauranteControllerTest {
 
 		mvc.perform(delete("/admin/restaurante/1")
 				.with(httpBasic("admin","admin")))
-				.andExpect(status().isOk());	
+				.andExpect(status().isNoContent());	
 	}
 	
 	@Test
